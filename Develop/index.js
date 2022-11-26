@@ -7,6 +7,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // This is array of questions for user input
 const questions = [
     {
+        // Input for user's full NAME
         type: 'input',
         name: 'name',
         message: 'Welcome! Please enter for first and last name!',
@@ -23,6 +24,7 @@ const questions = [
     },
 
     {
+        // Input for users GITHUB USERNAME
         type: 'input',
         name: 'github',
         message: 'Please Type in your Github username.',
@@ -38,7 +40,7 @@ const questions = [
         } 
     },
     {
-        // Now asking user for their email
+        // Input for the users EMAIL 
         type: 'input',
         name: 'email',
         message: 'Please enter your email address',
@@ -54,9 +56,25 @@ const questions = [
         } 
     },
     {
-        // Question array for Github Prject
-        
-    }
+        // Input for the TITLE or the Github Project
+        type: 'input',
+        name: 'Project title',
+        message: 'Please enter the title of your Github Project',
+        validate: projectInput => {
+            // Accept if a valid email is inputed 
+            if (projectInput) {
+                return true;
+            // reject and ask the user to enter an email if they did not
+            } else {
+                console. log('Every project has a title. Please enter the title of your Github project!');
+                return false;
+            }
+        } 
+    },
+    {
+        // Input for the description of the Github Project
+
+    },
 ];
 
 // TODO: Create a function to write README file
