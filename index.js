@@ -115,7 +115,7 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     const init = () => {
         return inquirer.prompt(questions);
@@ -123,4 +123,7 @@ function init() {
 }
 
 // Function call to initialize app
-init();
+init()
+.then(userInput => {
+    return generateMarkdown(userInput);
+})
