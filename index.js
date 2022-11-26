@@ -116,7 +116,11 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    const init = () => {
+        return inquirer.prompt(questions);
+    }
+}
 
 // Function call to initialize app
 init();
