@@ -87,10 +87,33 @@ const questions = [
             }
         } 
     },
+    {
+        // Input for instruction to project usage
+    },
+    {
+        // Input for how to install project
+    },
+    {
+        // Input for how others can contribute to the project
+    },
+    {
+        // Input for project license 
+    },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// This is the function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile('README.md', data, err => {
+        // if there is an error with creating the README
+        if (err) {
+            console.log(err);
+            return;
+        // when the README has been created sucessfully!
+        } else {
+            console.log("Your README has been successfully created!")
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {}
