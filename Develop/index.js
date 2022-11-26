@@ -38,7 +38,20 @@ const questions = [
         } 
     },
     {
-
+        // Now asking user for their email
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address',
+        validate: emailInput => {
+            // Accept if a valid email is inputed 
+            if (emailInput) {
+                return true;
+            // reject and ask the user to enter an email if they did not
+            } else {
+                console. log('Please enter your email address as a source of contact');
+                return false;
+            }
+        } 
     }
 ];
 
