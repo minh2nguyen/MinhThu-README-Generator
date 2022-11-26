@@ -58,13 +58,13 @@ const questions = [
     {
         // Input for the TITLE or the Github Project
         type: 'input',
-        name: 'Project title',
+        name: 'project title',
         message: 'Please enter the title of your Github Project',
         validate: projectInput => {
-            // Accept if a valid email is inputed 
+            // Accept if a project title is inputed 
             if (projectInput) {
                 return true;
-            // reject and ask the user to enter an email if they did not
+            // reject and ask the user to enter title if they did not
             } else {
                 console. log('Every project has a title. Please enter the title of your Github project!');
                 return false;
@@ -73,7 +73,19 @@ const questions = [
     },
     {
         // Input for the description of the Github Project
-
+        type: 'input',
+        name: 'description',
+        message: 'Please enter the description of your Github Project',
+        validate: descriptionInput => {
+            // Accept if a description is inputed 
+            if (descriptionInput) {
+                return true;
+            // reject and ask the user to add a description of their project if they did not
+            } else {
+                console. log('Please provide a description of your Github project!');
+                return false;
+            }
+        } 
     },
 ];
 
