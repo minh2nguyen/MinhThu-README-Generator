@@ -8,8 +8,24 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {
         type: 'input',
+        name: 'name',
+        message: 'Welcome! Please enter for first and last name!',
+        validate: nameInput => {
+            if (nameInput) {
+            // Accept if user entered their first and last name
+                return true;
+            } else {
+            // Reminder for user to enter their name if they have not
+                console.log('Please enter your first and last name before moving forward!');
+                return false;
+            }
+        }
+    },
+
+    {
+        type: 'input',
         name: 'github',
-        message: 'Type in your Github username.',
+        message: 'Please Type in your Github username.',
         validate: usernameInput => {
             // Accept if a valid username is inputed 
             if (usernameInput) {
@@ -19,7 +35,10 @@ const questions = [
                 console. log('Please enter a valid Github username');
                 return false;
             }
-        }
+        } 
+    },
+    {
+
     }
 ];
 
